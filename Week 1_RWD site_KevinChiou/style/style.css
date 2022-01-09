@@ -16,7 +16,7 @@ nav.nav {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100vw;
-  height: 8vh;
+  height: 70px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -168,8 +168,8 @@ div.button button#CTA-button {
   color: #474747;
   font-size: 1.5rem;
   font-weight: bold;
-  width: 20vw;
-  height: 7vh;
+  width: 120px;
+  height: 90px;
   cursor: pointer;
   border: none;
   border-radius: 10px;
@@ -236,8 +236,33 @@ div.button button#CTA-button:hover {
   ul.main li.nav-item {
     display: none;
   }
+  section#content-box-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section#content-box-wrapper div.content-box {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   div.burger {
-    display: inline-block;
+    position: relative;
+    bottom: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -252,7 +277,7 @@ div.button button#CTA-button:hover {
   }
   div.burger input:checked ~ .menu {
     max-height: 300px;
-    width: 100vw;
+    width: 100px;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -269,13 +294,20 @@ div.button button#CTA-button:hover {
     height: 60px;
     float: right;
     margin-top: 15px;
+    left: -30px;
     cursor: pointer;
   }
   div.burger img:hover {
     cursor: pointer;
   }
   div.burger ul.menu {
-    clear: both;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 70px;
+    left: -50px;
+    position: absolute;
     background: #fff;
     list-style: none;
     padding-left: 0;
@@ -320,6 +352,9 @@ div.button button#CTA-button:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  body header nav.nav ul.mian li.nav-item a {
+    font-size: 1.25rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

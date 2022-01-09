@@ -14,7 +14,7 @@ nav.nav {
   display: flex;
   flex-wrap: wrap;
   width: 100vw;
-  height: 8vh;
+  height: 70px;
   flex-direction: row;
   background-color: #eeeeee;
   justify-content: space-between;
@@ -125,8 +125,8 @@ div.button {
     color: rgb(71, 71, 71);
     font-size: 1.5rem;
     font-weight: bold;
-    width: 20vw;
-    height: 7vh;
+    width: 120px;
+    height: 90px;
     cursor: pointer;
     border: none;
     border-radius: 10px;
@@ -181,8 +181,20 @@ div.button {
   ul.main li.nav-item {
     display: none;
   }
+  section#content-box-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    div.content-box {
+      align-items: center;
+      justify-content: center;
+    }
+  }
   div.burger {
-    display: inline-block;
+    position: relative;
+    bottom: 7px;
+    display: flex;
     align-items: center;
     &::after {
       content: "";
@@ -194,7 +206,7 @@ div.button {
     }
     input:checked ~ .menu {
       max-height: 300px;
-      width: 100vw;
+      width: 100px;
       justify-content: flex-end;
     }
     label {
@@ -209,13 +221,17 @@ div.button {
       height: 60px;
       float: right;
       margin-top: 15px;
+      left: -30px;
       cursor: pointer;
     }
     img:hover {
       cursor: pointer;
     }
     ul.menu {
-      clear: both;
+      flex-direction: column;
+      top: 70px;
+      left: -50px;
+      position: absolute;
       background: #fff;
       list-style: none;
       padding-left: 0;
@@ -255,6 +271,9 @@ div.button {
     ul.mian {
       justify-content: center;
       align-items: center;
+      li.nav-item a {
+        font-size: 1.25rem;
+      }
     }
   }
 }
