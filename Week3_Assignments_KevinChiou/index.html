@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week3_Assignment</title>
+    <script src="./app.js"></script>
 </head>
 <body>
-    <h1>Wrong Parameter</h1>
+    <!-- <h1>Wrong Parameter</h1> -->
+    <form action="/getData" method="GET">
+        <label for="integer">Enter an integer :</label>
+        <input type="text" id="integer" name="integer">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
 </body>
 </html>
