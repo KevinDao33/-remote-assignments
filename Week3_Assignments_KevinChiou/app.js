@@ -3,7 +3,8 @@ const app = express();
 const cowsay = require("cowsay");
 const path = require("path");
 
-// app.set('view engine', 'pug');
+// middleware
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.write(cowsay.say({
@@ -15,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/getData', (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "./public/index.html"));
 
     let input = Number(req.query.integer);
     if (Number.isInteger(input) === true && input >=0 && req.query.integer !== ""){
