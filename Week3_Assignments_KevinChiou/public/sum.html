@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week3_Assignment</title>
+
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    
+    <label for="integer">Enter an integer :</label>
+    <input type="text" id="integer">
+    <button type="click" id="btn">Submit</button>
+    
+    <div id="result">
+
+    </div>
+
+    <script>
+        console.log('hi', document.getElementById('btn'));
+        console.log(document.getElementById('integer'), typeof document.getElementById('integer'))
+
+        //ajax
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === 4) {
+                if(xhr.status === 200) {
+                    document.getElementById("result").innerHTML = xhr.responseText;
+                } else {
+                    alert(xhr.statusText);
+                }
+            }
+        }  
+        let userInput = document.getElementById('integer');
+        document.getElementById("btn").addEventListener('click', () => {
+            xhr.open('GET', 'http://localhost:3000/getData?integer=' + userInput.value, true);
+            xhr.send();
+        });
+    </script>
+
+</body>
+</html>
