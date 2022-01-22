@@ -7,6 +7,7 @@ const path = require("path");
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
+    console.log('hi');
     res.write(cowsay.say({
         text : "welcome to my servmooooooo",
         e : "oO",
@@ -18,17 +19,27 @@ app.get('/', (req, res) => {
 app.get('/getData', (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 
-    let input = Number(req.query.integer);
-    if (Number.isInteger(input) === true && input >=0 && req.query.integer !== ""){
+    let input = req.query.integer;
+    let isLackOfParam = !input || input === "";
+    let inputNumber = Number(input);
+    let propertyName = Object.getOwnPropertyNames(req.query)[0];
+
+    // the input is an integer
+    if (Number.isInteger(inputNumber) && !isLackOfParam){
         let result = 0;
-        for(let i=0; i<input+1; i++){
-        result += i;
-    }   console.log(result);
-        res.send('The result is : '+ result.toString());
-    } else if (req.query.integer == "" && req.query != "integer"){
+        for(let i=0; i<inputNumber+1; i++){
+            result += i;
+        }   
+        console.log(result);
+        res.send('The result is : ' + result.toString());
+    } 
+    // there's no input
+    else if (isLackOfParam && propertyName === "integer"){
             console.log('Lack of Parameter');
             res.send('Lack of Parameter');
-    } else if (req.query != "integer" && req.query.integer != null){
+     } 
+     // there's input, but it's not a integer > 0
+    else if(!Number.isInteger(inputNumber) && !isLackOfParam){
             console.log(req.query.integer);
             res.send("Wrong Parameter");
     }
