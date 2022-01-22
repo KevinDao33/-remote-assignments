@@ -5,7 +5,7 @@ const path = require("path");
 
 
 app.get('/', (req, res) => {
-    console.log('hi');
+    console.log('hi, welcome to the server!');
     res.write(cowsay.say({
         text : "welcome to my servmooooooo",
         e : "oO",
@@ -46,6 +46,6 @@ app.get('/getData', (req, res) => {
     }
 });
 
-app.listen((3001), () => {
-    console.log("The server is running on port 3001.")
+app.listen((3000), () => {
+    console.log("The server is running on port 3000.")
 })
