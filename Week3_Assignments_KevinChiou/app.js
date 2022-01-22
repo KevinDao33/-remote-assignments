@@ -3,8 +3,6 @@ const app = express();
 const cowsay = require("cowsay");
 const path = require("path");
 
-// middleware
-app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     console.log('hi');
@@ -15,6 +13,9 @@ app.get('/', (req, res) => {
     }));
     res.end();
 });
+
+// middleware for /getData
+app.use(express.static('public'));
 
 app.get('/getData', (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"));

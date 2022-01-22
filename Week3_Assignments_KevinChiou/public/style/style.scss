@@ -6,3 +6,10 @@
   color: whitesmoke;
   font-size: 1.5rem;
 }
+
+div#resultWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
