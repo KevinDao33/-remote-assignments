@@ -141,6 +141,11 @@ div.button {
 
 // screen width bigger than 1200px
 @media screen and (min-width: 1200px) and (max-width: 1295px) {
+  //hidden context-boxed
+  section#content-box-wrapper-hidden {
+    display: none;
+  }
+  //content box 1-4
   section.box {
     // flex-wrap: nowrap;
     align-items: center;
@@ -156,6 +161,10 @@ div.button {
 
 // screen between 800-1199
 @media screen and (max-width: 1199px) and (min-width: 800px) {
+  //hidden context-boxed
+  section#content-box-wrapper-hidden {
+    display: none;
+  }
   // content-boxes
   section.box {
     display: flex;
@@ -182,6 +191,10 @@ div.button {
 
 // screen between 500-799px
 @media screen and (min-width: 500px) and (max-width: 799px) {
+  //hidden context-boxed
+  section#content-box-wrapper-hidden {
+    display: none;
+  }
   ul.main li.nav-item {
     display: none;
   }
