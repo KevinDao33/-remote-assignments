@@ -182,11 +182,8 @@ div.button button#CTA-button:hover {
   color: #f1f1f1;
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1295px) {
-  section#content-box-wrapper-hidden {
-    display: none;
-  }
-  section#content-box-wrapper {
+@media screen and (min-width: 1200px)  {
+  section.box {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -194,19 +191,19 @@ div.button button#CTA-button:hover {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  section#content-box-wrapper div.content-box {
+  section.box div.content-box {
     padding: 0;
     margin: 0;
     margin-bottom: 1rem;
     width: 600px;
   }
-}
-
-@media screen and (max-width: 1199px) and (min-width: 800px) {
   section#content-box-wrapper-hidden {
     display: none;
   }
-  section.#content-box-wrapper {
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  section.box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -219,7 +216,7 @@ div.button button#CTA-button:hover {
         -ms-flex-align: center;
             align-items: center;
   }
-  section#content-box-wrapper div.content-box {
+  section.box div.content-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -239,16 +236,16 @@ div.button button#CTA-button:hover {
     height: 20vh;
     border-radius: 15px;
   }
-}
-
-@media screen and (min-width: 500px) and (max-width: 799px) {
   section#content-box-wrapper-hidden {
     display: none;
   }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
   ul.main li.nav-item {
     display: none;
   }
-  section#content-box-wrapper {
+  section.box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -261,7 +258,7 @@ div.button button#CTA-button:hover {
         -ms-flex-align: center;
             align-items: center;
   }
-  section#content-box-wrapper div.content-box {
+  section.box div.content-box {
     font-size: 2rem;
     font-weight: bold;
     -webkit-box-align: center;
@@ -320,11 +317,14 @@ div.button button#CTA-button:hover {
     display: block;
     line-height: 50px;
     font-size: 1.5rem;
-    color: #5d5d5d;
+    color: black;
   }
   div.burger ul.burger a:hover {
     background: #5d5d5d;
     color: #fff;
+  }
+  section#content-box-wrapper-hidden {
+    display: none;
   }
 }
 
