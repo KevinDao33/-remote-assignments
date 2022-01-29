@@ -1,4 +1,393 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div.burger {
+  display: none;
+}
+
+nav.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100vw;
+  height: 70px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #eeeeee;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav.nav div.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+}
+
+nav.nav div.logo img {
+  width: 60px;
+  height: 60px;
+}
+
+nav.nav div.logo h1#title {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+nav.nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav.nav ul li.nav-item a {
+  margin: 1rem;
+  font-size: 1.4rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: #326273;
+  font-weight: bold;
+}
+
+nav.nav ul li.nav-item a:hover {
+  color: #ff934f;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+
+div.welcome-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+  width: 100vw;
+  height: 30vh;
+  background-color: #326273;
+  color: #ffffff;
+}
+
+div.welcome-message h1 {
+  display: inline-block;
+  text-align: center;
+  -webkit-margin-before: 1rem;
+          margin-block-start: 1rem;
+  -webkit-margin-after: 1rem;
+          margin-block-end: 1rem;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  vertical-align: middle;
+}
+
+main div#section-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main div#section-title h1 {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+section.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.box div.content-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: lightpink;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin: 1.5rem;
+  width: 600px;
+  height: 20vh;
+  border-radius: 15px;
+}
+
+div.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 1rem;
+}
+
+div.button button#CTA-button {
+  background-color: #72c0d1;
+  color: #474747;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 120px;
+  height: 90px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+div.button button#CTA-button:hover {
+  background-color: #6de0ae;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  color: #f1f1f1;
+}
+
+@media screen and (min-width: 1200px)  {
+  section.box {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  section.box div.content-box {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+    width: 600px;
+  }
+  section#content-box-wrapper-hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  section.box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.box div.content-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: lightpink;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: 48vw;
+    height: 20vh;
+    border-radius: 15px;
+  }
+  section#content-box-wrapper-hidden {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  ul.main li.nav-item {
+    display: none;
+  }
+  section.box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.box div.content-box {
+    font-size: 2rem;
+    font-weight: bold;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: 46vw;
+    height: 20vh;
+    border-radius: 15px;
+  }
+  div.burger {
+    position: relative;
+    bottom: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div.burger label {
+    float: right;
+    padding-right: 30px;
+    line-height: 60px;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  div.burger img#burgerPic {
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-top: 15px;
+    left: -30px;
+    cursor: pointer;
+  }
+  div.burger img#closeIcon {
+    display: none;
+  }
+  div.burger ul.burger {
+    display: none;
+  }
+  div.burger ul.burger li.burger {
+    text-align: center;
+    border-bottom: 1px solid #efefef;
+    width: 100%;
+    text-align: left;
+    margin-left: 5px;
+  }
+  div.burger ul.burger a {
+    padding: 0.5rem;
+    text-decoration: none;
+    display: block;
+    line-height: 50px;
+    font-size: 1.5rem;
+    color: black;
+  }
+  div.burger ul.burger a:hover {
+    background: #5d5d5d;
+    color: #fff;
+  }
+  section#content-box-wrapper-hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  body header nav.nav ul.main {
+    display: none;
+  }
+  body header nav.nav div.burger {
+    position: relative;
+    bottom: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body header nav.nav div.burger label {
+    float: right;
+    padding-right: 30px;
+    line-height: 60px;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  body header nav.nav div.burger img#burgerPic {
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-top: 15px;
+    left: -30px;
+    cursor: pointer;
+  }
+  body header nav.nav div.burger img#closeIcon {
+    display: none;
+  }
+  body header nav.nav div.burger ul.burger {
+    display: none;
+  }
+  body header nav.nav div.burger ul.burger li.burger {
+    text-align: center;
+    border-bottom: 1px solid #efefef;
+    width: 100%;
+    text-align: left;
+    margin-left: 5px;
+  }
+  body header nav.nav div.burger ul.burger a {
+    padding: 0.5rem;
+    text-decoration: none;
+    display: block;
+    line-height: 50px;
+    font-size: 1.5rem;
+    color: #5d5d5d;
+  }
+  body header nav.nav div.burger ul.burger a:hover {
+    background: #5d5d5d;
+    color: #fff;
+  }
+  section#content-box-wrapper-hidden {
+    display: none;
+  }
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +424,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
