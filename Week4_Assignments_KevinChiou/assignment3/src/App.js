@@ -39,9 +39,14 @@ class Header extends React.Component {
                     <div className="burger">
                        {/* for in the label tag tbd */}
                        <label>
-                        <img id= "burgerPic" alt="show menu" src={burgerIcon} onClick= {this.showBurgerMenu.bind(null, true)}></img>
-                       </label>
-                       { this.state.showBurger && (<Burger />) }
+                            <img 
+                                id = "burgerPic" 
+                                alt = "show menu" 
+                                src = {burgerIcon} 
+                                onClick = {this.showBurgerMenu.bind(null, true)}
+                            />
+                        </label>
+                        { this.state.showBurger && (<Burger />) }
                     </div>
       
                 </nav>
@@ -54,19 +59,11 @@ class Header extends React.Component {
 
 //make a component for burger menu's ul and li
 class Burger extends React.Component{
-    state = {
-        showBurger: true
-    }
 
-    showBurgerMenu = (bool) => {
-        this.setState({
-            showBurger: bool
-        });
-    }
     render() {
         return (
             <div id='burgerWrapper'>
-                <img id= "closeIcon" alt="close" src={closeIcon} onClick= {this.showBurgerMenu.bind(null, false)}></img>
+                <img id= "closeIcon" alt= "close" src= { closeIcon } onClick= { this.props.showBurgerMenu }></img>
                 <ul className= "burger menu">
                     <li className= "burger"><a className= "burgerA" href='#Item1'>Item1</a></li>
                     <li className= "burger"><a className= "burgerA" href='#Item2'>Item2</a></li>
