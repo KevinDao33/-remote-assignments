@@ -12,14 +12,12 @@ const Header = () => {
           <nav className = "nav">
               {/* make the left part of navbar */}
               <div className = "logo">
-                  {/* src alt in the img tag tbd */}
                   <img className = "logo" alt="logo" src={logo}></img>
                   <h1>Kevin Dao's</h1>
               </div>
 
               {/* make the right part of navbar */}
               <ul className= "main">
-                  {/* href in the a tag tbd */}
                   <li className="nav-item"><a href='#Item1'>Item 1</a></li>
                   <li className="nav-item"><a href='#Item2'>Item 2</a></li>
                   <li className="nav-item"><a href='#Item3'>Item 3</a></li>
@@ -30,14 +28,11 @@ const Header = () => {
               <div className="burger">
                  {/* for in the label tag tbd */}
                  <label>
-                  {/* src, alt in img tag tbd */}
                   <img id= "burgerPic" alt="show menu" src={burgerIcon}></img>
                  </label> 
                   
-                  {/* src in img tag tbd */}
                  <img id= "closeIcon" alt="close" src={closeIcon}></img>
                  <ul className= "burger menu">
-                 {/* href in a tag tbd */}
                   <li className= "burger"><a className= "burgerA" href='#Item1'>Item1</a></li>
                   <li className= "burger"><a className= "burgerA" href='#Item2'>Item2</a></li>
                   <li className= "burger"><a className= "burgerA" href='#Item3'>Item3</a></li>
@@ -53,11 +48,23 @@ const Header = () => {
 
 //make a component for the welcome message using class component
 class Welcome extends React.Component{
+  state = {
+    message: "Welcome Message"
+  }
+
+  changeMessage = () => {
+    if(this.state.message === "Welcome Message"){
+        this.setState({ message: "Have a Good Time!" });
+    } else if(this.state.message === "Have a Good Time!"){
+      this.setState({ message: "Welcome Message" });
+    }
+  }
+
   render() {
       return (
           <main>
               <div className= "welcome-message">
-                  <h1 className= "main-message">Welcome Message</h1>
+                  <h1 className= "main-message" onClick= {this.changeMessage}> {this.state.message} </h1>
               </div>
           </main> 
       );
