@@ -5,46 +5,78 @@ import burgerIcon from './/hamburgerIcon.png';
 import './App.css';
 import React from 'react';
 
-// make a component for the header using function component
-const Header = () => {
-  return(
-      <header>
-          <nav className = "nav">
-              {/* make the left part of navbar */}
-              <div className = "logo">
-                  <img className = "logo" alt="logo" src={logo}></img>
-                  <h1>Kevin Dao's</h1>
-              </div>
+// make a component for the header using class component
+class Header extends React.Component {
+    state = {
+        showBurger: false
+    }
 
-              {/* make the right part of navbar */}
-              <ul className= "main">
-                  <li className="nav-item"><a href='#Item1'>Item 1</a></li>
-                  <li className="nav-item"><a href='#Item2'>Item 2</a></li>
-                  <li className="nav-item"><a href='#Item3'>Item 3</a></li>
-                  <li className="nav-item"><a href='#Item4'>Item 4</a></li>
-              </ul>
+    showBurgerMenu = (bool) => {
+        this.setState({
+            showBurger: bool
+        });
+    }
 
-              {/* make the hamburger */}
-              <div className="burger">
-                 {/* for in the label tag tbd */}
-                 <label>
-                  <img id= "burgerPic" alt="show menu" src={burgerIcon}></img>
-                 </label> 
-                  
-                 <img id= "closeIcon" alt="close" src={closeIcon}></img>
-                 <ul className= "burger menu">
-                  <li className= "burger"><a className= "burgerA" href='#Item1'>Item1</a></li>
-                  <li className= "burger"><a className= "burgerA" href='#Item2'>Item2</a></li>
-                  <li className= "burger"><a className= "burgerA" href='#Item3'>Item3</a></li>
-                  <li className= "burger"><a className= "burgerA" href='#Item4'>Item4</a></li>
-                 </ul>
-              </div>
-
-          </nav>
-      </header>
-  );
+    render() {
+        return(
+            <header>
+                <nav className = "nav">
+                    {/* make the left part of navbar */}
+                    <div className = "logo">
+                        <img className = "logo" alt="logo" src={logo}></img>
+                        <h1>Kevin Dao's</h1>
+                    </div>
+      
+                    {/* make the right part of navbar */}
+                    <ul className= "main">
+                        <li className="nav-item"><a href='#Item1'>Item 1</a></li>
+                        <li className="nav-item"><a href='#Item2'>Item 2</a></li>
+                        <li className="nav-item"><a href='#Item3'>Item 3</a></li>
+                        <li className="nav-item"><a href='#Item4'>Item 4</a></li>
+                    </ul>
+      
+                    {/* make the hamburger */}
+                    <div className="burger">
+                       {/* for in the label tag tbd */}
+                       <label>
+                        <img id= "burgerPic" alt="show menu" src={burgerIcon} onClick= {this.showBurgerMenu.bind(null, true)}></img>
+                       </label>
+                       { this.state.showBurger && (<Burger />) }
+                    </div>
+      
+                </nav>
+            </header>
+        );
+    }
+  
 }
 
+
+//make a component for burger menu's ul and li
+class Burger extends React.Component{
+    state = {
+        showBurger: true
+    }
+
+    showBurgerMenu = (bool) => {
+        this.setState({
+            showBurger: bool
+        });
+    }
+    render() {
+        return (
+            <div id='burgerWrapper'>
+                <img id= "closeIcon" alt="close" src={closeIcon} onClick= {this.showBurgerMenu.bind(null, false)}></img>
+                <ul className= "burger menu">
+                    <li className= "burger"><a className= "burgerA" href='#Item1'>Item1</a></li>
+                    <li className= "burger"><a className= "burgerA" href='#Item2'>Item2</a></li>
+                    <li className= "burger"><a className= "burgerA" href='#Item3'>Item3</a></li>
+                    <li className= "burger"><a className= "burgerA" href='#Item4'>Item4</a></li>
+                </ul>
+            </div>
+        )
+    }
+}
 
 //make a component for the welcome message using class component
 class Welcome extends React.Component{
@@ -103,10 +135,21 @@ class ContentBox extends React.Component{
 
 //make the CTA btn component
 class CTAbtn extends React.Component{
+    state = {
+        showHiddenBox: false
+    }
+
+    _showHiddenBox = (bool) => {
+        this.setState({
+            showHiddenBox: bool
+        });
+    }
+
   render() {
       return (
           <div className= "button">
-              <button id= "CTA-button">Call to Action</button>
+              <button id= "CTA-button" onClick= {this._showHiddenBox.bind(null, true)}>Call to Action</button>
+              { this.state.showHiddenBox && <ContentBoxHidden /> }
           </div>
       );
   }
@@ -118,7 +161,7 @@ class CTAbtn extends React.Component{
 class ContentBoxHidden extends React.Component{
   render() {
       return (
-          <section calssName= "box" id= "content-box-wrapper-hidden">
+          <section className= "box" id= "content-box-wrapper-hidden">
               <div className= "content-box">Content Box 5</div>
               <div className= "content-box">Content Box 6</div>
               <div className= "content-box">Content Box 7</div>
@@ -139,7 +182,6 @@ class App extends React.Component {
               <Title />
               <ContentBox />
               <CTAbtn />
-              <ContentBoxHidden />
           </div>
       );
   }
